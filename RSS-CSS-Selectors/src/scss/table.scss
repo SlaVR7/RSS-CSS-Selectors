@@ -1,0 +1,20 @@
+.adaptive-description {
+  display: none;
+  background: #413138;
+
+  @media (max-width: 1199px) {
+    display: block;
+    width: 400px;
+    height: 200px;
+  }
+}
+
+.table {
+  width: 600px;
+  height: 300px;
+  margin: 300px auto 0;
+  background-image: url("../img/table.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+

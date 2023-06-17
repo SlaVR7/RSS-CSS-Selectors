@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #886b7c;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  bottom: 0;
+  max-width: 1500px;
+  height: 100%;
+  margin-left: auto;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  text-align: center;
+}

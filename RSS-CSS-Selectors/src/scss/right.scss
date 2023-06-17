@@ -1,0 +1,45 @@
+.right {
+  width: 370px;
+  background: #413138;
+
+  @media (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.yellow {
+  color: #f3f372;
+}
+
+.right-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  @extend .yellow;
+  margin-right: 10px;
+}
+
+.task-description {
+  @extend .yellow;
+}
+
+.arrows {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.left-arrow {
+  @extend .arrows;
+  background-image: url("../img/arrow.svg");
+  transform: rotate(180deg);
+}
+
+.right-arrow {
+  @extend .arrows;
+  background-image: url("../img/arrow.svg");
+}
