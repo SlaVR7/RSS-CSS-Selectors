@@ -8,16 +8,27 @@ body {
 }
 
 .wrapper {
-  position: relative;
-  bottom: 0;
   max-width: 1500px;
   height: 100%;
   margin-left: auto;
   padding-left: 10px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1199px) {
+    justify-content: center;
+    padding-right: 10px;
+  }
 }
 
 h2 {
   text-align: center;
+}
+
+.left {
+  margin-bottom: 40px;
+
+  @media (max-width: 1199px) {
+    flex-grow: 1;
+  }
 }

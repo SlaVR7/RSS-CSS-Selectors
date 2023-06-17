@@ -1,6 +1,9 @@
 .right {
+  position: relative;
   width: 370px;
   background: #413138;
+  padding: 0 20px;
+  overflow: hidden;
 
   @media (max-width: 1199px) {
     display: none;
@@ -21,9 +24,7 @@ h1 {
   margin-right: 10px;
 }
 
-.task-description {
-  @extend .yellow;
-}
+
 
 .arrows {
   width: 40px;

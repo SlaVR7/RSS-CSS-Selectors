@@ -1,0 +1,40 @@
+.pop-up {
+  @extend .right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #1e1719;
+}
+
+.hidden {
+  transform: translateX(370px);
+  transition-duration: .5s;
+}
+
+.pop-up__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/close.svg");
+  background-size: contain;
+}
+
+.menu {
+  width: 40px;
+  margin: 10px 0 0 auto;
+}
+
+.menu-item {
+  width: 40px;
+  height: 3px;
+  margin-bottom: 8px;
+  background-color: #f3f372;
+}

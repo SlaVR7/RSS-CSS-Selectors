@@ -1,4 +1,6 @@
 import './scss/styles.scss';
 
-console.log("Hello World!");
+import { movePopup } from "./ts/pop-up";
+
+movePopup()
 

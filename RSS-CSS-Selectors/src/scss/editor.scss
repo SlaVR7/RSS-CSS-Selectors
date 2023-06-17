@@ -4,6 +4,11 @@
   display: flex;
   border: 2px solid black;
   background: beige;
+
+  @media (max-width: 1199px) {
+    width: 100%;
+    min-width: 470px;
+  }
 }
 
 .input-area {
