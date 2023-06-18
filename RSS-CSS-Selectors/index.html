@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>RSS-CSS-Selectors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="wrapper">
@@ -10,11 +11,25 @@
         <h2>Select some cube</h2>
         <div class="adaptive">
           <div class="adaptive-title">
-            <h1>Level 1</h1>
-            <div class="left-arrow"></div>
-            <div class="right-arrow"></div>
+            <div class="title-and-arrows">
+              <div class="left-arrow"></div>
+              <h1>Level 1</h1>
+              <div class="right-arrow"></div>
+            </div>
+            <div class="menu" id="adaptiveMenu">
+              <div class="menu-item"></div>
+              <div class="menu-item"></div>
+              <div class="menu-item"></div>
+              <div class="menu-item"></div>
+            </div>
           </div>
           <div class="task-description">Here will be task description</div>
+          <div class="adaptive hidden-adaptive" id="adaptivePopup">
+              <div class="adaptive-popup-title">
+                <div class="level">Select level</div>
+                <div class="closeBtn" id="closeAdaptive"></div>
+            </div>
+        </div>
         </div>
         <div class="game-area">
           <div class="table"></div>
@@ -37,16 +52,16 @@
           <div class="right-wrapper">
             <div class="pop-up__title">
               <h1>Select level</h1>
-              <div class="closeBtn"></div>
+              <div class="closeBtn" id="closeBtn"></div>
             </div>
 
           </div>
         </div>
         <div class="right-wrapper">
-          <h1>Level 1</h1>
           <div class="left-arrow"></div>
+          <h1>Level 1</h1>
           <div class="right-arrow"></div>
-          <div class="menu">
+          <div class="menu" id="rightMenu">
             <div class="menu-item"></div>
             <div class="menu-item"></div>
             <div class="menu-item"></div>

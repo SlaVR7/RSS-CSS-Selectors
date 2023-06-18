@@ -6,10 +6,16 @@
   bottom: 0;
   z-index: 2;
   background-color: #1e1719;
+  transition-duration: .5s;
 }
 
 .hidden {
   transform: translateX(370px);
+  transition-duration: .5s;
+}
+
+.hidden-adaptive {
+  transform: scale(0);
   transition-duration: .5s;
 }
 
@@ -27,14 +33,23 @@
   background-size: contain;
 }
 
-.menu {
-  width: 40px;
-  margin: 10px 0 0 auto;
+#adaptivePopup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #1e1719;
+  transition-duration: .5s;
 }
 
-.menu-item {
-  width: 40px;
-  height: 3px;
-  margin-bottom: 8px;
-  background-color: #f3f372;
+.adaptive-popup-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.level {
+  margin: 0 auto;
 }

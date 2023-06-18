@@ -7,5 +7,9 @@
   background-image: url("../img/table.png");
   background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: 800px) {
+    width: 480px;
+  }
 }
 
