@@ -1,11 +1,12 @@
 .right {
   position: relative;
-  width: 370px;
+  min-width: 300px;
+  height: 100vh;
   background: #413138;
   padding: 0 20px;
   overflow: hidden;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 }

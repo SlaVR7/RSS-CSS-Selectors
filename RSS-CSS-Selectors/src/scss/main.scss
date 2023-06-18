@@ -8,14 +8,13 @@ body {
 }
 
 .wrapper {
-  max-width: 1500px;
   height: 100%;
   margin-left: auto;
   padding-left: 10px;
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1023px) {
     justify-content: center;
     padding-right: 10px;
   }
@@ -26,9 +25,9 @@ h2 {
 }
 
 .left {
-  margin-bottom: 40px;
+  margin-right: 30px;
 
-  @media (max-width: 1199px) {
-    flex-grow: 1;
+  @media (max-width: 1023px) {
+    margin-right: 0;
   }
 }

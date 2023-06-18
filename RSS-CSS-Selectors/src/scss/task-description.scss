@@ -3,7 +3,7 @@
   display: none;
   background: #413138;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1023px) {
     display: flex;
     flex-direction: column;
     min-width: 480px;
@@ -33,7 +33,7 @@
   margin: 10px 0 0 auto;
   flex-shrink: 1;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1023px) {
     margin: 10px 10px 0 0;
   }
 }

@@ -1,11 +1,11 @@
 .editor {
-  width: 800px;
-  height: 250px;
+  //width: 720px;
+  height: 312px;
   display: flex;
   border: 2px solid black;
   background: beige;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 1023px) {
     width: 100%;
     min-width: 470px;
   }
@@ -14,7 +14,12 @@
 .input-area {
   position: relative;
   border: 2px solid grey;
-  width: 50%;
+  width: 33vw;
+  font-size: 20px;
+
+  @media (max-width: 1023px) {
+    width: 50%;
+  }
 }
 
 .css {
@@ -36,9 +41,31 @@
 
 #css-input {
   display: inline-block;
-  width: 84%;
+  width: 72%;
+  margin-left: 10px;
+  font-size: 20px;
   
   @media (max-width: 800px) {
     width: 73%;
+  }
+}
+
+.inputBtn {
+  font-size: 20px;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.inputBtnShort {
+  display: none;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/enter.svg");
+  background-size: contain;
+
+  @media (max-width: 1023px) {
+    display: inline-block;
   }
 }
