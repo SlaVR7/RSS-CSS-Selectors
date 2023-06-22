@@ -1,6 +1,5 @@
 import './scss/styles.scss';
 
-import { movePopup } from "./ts/pop-up";
+import {changeLevelWrapper} from "./ts/changeLevel";
 
-movePopup()
-
+changeLevelWrapper()

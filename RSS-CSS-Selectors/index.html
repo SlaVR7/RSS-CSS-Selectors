@@ -8,12 +8,12 @@
   <body>
     <div class="wrapper">
       <div class="left">
-        <h2>Select some cube</h2>
+        <h3>Select some cube</h3>
         <div class="adaptive">
           <div class="adaptive-title">
             <div class="title-and-arrows">
               <div class="left-arrow"></div>
-              <h1>Level 1</h1>
+              <h2 class="level-num">Level 1</h2>
               <div class="right-arrow"></div>
             </div>
             <div class="menu" id="adaptiveMenu">
@@ -23,16 +23,33 @@
               <div class="menu-item"></div>
             </div>
           </div>
-          <div class="task-description">Here will be task description</div>
+          <div class="task-description"></div>
           <div class="adaptive hidden-adaptive" id="adaptivePopup">
               <div class="adaptive-popup-title">
                 <div class="level">Select level</div>
                 <div class="closeBtn" id="closeAdaptive"></div>
             </div>
+            <ul class="level-list-adaptive">
+              <li class="level-item-adaptive">Level 1</li>
+              <li class="level-item-adaptive">Level 2</li>
+              <li class="level-item-adaptive">Level 3</li>
+              <li class="level-item-adaptive">Level 4</li>
+              <li class="level-item-adaptive">Level 5</li>
+              <li class="level-item-adaptive">Level 6</li>
+              <li class="level-item-adaptive">Level 7</li>
+              <li class="level-item-adaptive">Level 8</li>
+              <li class="level-item-adaptive">Level 9</li>
+              <li class="level-item-adaptive">Level 10</li>
+            </ul>
         </div>
         </div>
         <div class="game-area">
-          <div class="table"></div>
+          <div class="table">
+            <div class="tableFig1"></div>
+            <div class="tableFig2"></div>
+            <div class="tableFig3"></div>
+            <div class="tableFig4"></div>
+          </div>
         </div>
         <div class="editor">
           <div class="css">
@@ -45,22 +62,35 @@
           <div class="html">
             <h3>HTML</h3>
             <div class="css-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+            <div class="tagsField"></div>
           </div>
         </div>
       </div>
       <div class="right">
         <div class="pop-up hidden">
-          <div class="right-wrapper">
+          <div class="popup-wrapper">
             <div class="pop-up__title">
-              <h1>Select level</h1>
+              <h2>Select level</h2>
               <div class="closeBtn" id="closeBtn"></div>
             </div>
+            <ul>
+              <li class="level-item">Level 1</li>
+              <li class="level-item">Level 2</li>
+              <li class="level-item">Level 3</li>
+              <li class="level-item">Level 4</li>
+              <li class="level-item">Level 5</li>
+              <li class="level-item">Level 6</li>
+              <li class="level-item">Level 7</li>
+              <li class="level-item">Level 8</li>
+              <li class="level-item">Level 9</li>
+              <li class="level-item">Level 10</li>
+            </ul>
 
           </div>
         </div>
         <div class="right-wrapper">
           <div class="left-arrow"></div>
-          <h1>Level 1</h1>
+          <h2 class="level-num"></h2>
           <div class="right-arrow"></div>
           <div class="menu" id="rightMenu">
             <div class="menu-item"></div>
@@ -69,7 +99,7 @@
             <div class="menu-item"></div>
           </div>
         </div>
-        <div class="task-description">Here will be task description</div>
+        <div class="task-description"></div>
       </div>
     </div>
   </body>

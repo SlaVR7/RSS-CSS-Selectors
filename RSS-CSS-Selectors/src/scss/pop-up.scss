@@ -24,6 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  h2 {
+    color: #f3f372;
+  }
 }
 
 .closeBtn {
@@ -52,4 +56,5 @@
 
 .level {
   margin: 0 auto;
+  color: #f3f372;
 }

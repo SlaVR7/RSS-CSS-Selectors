@@ -1,6 +1,7 @@
-
-
 .table {
+  display: flex;
+  justify-content: center;
+  position: relative;
   width: 550px;
   height: 250px;
   margin: 150px auto 0;
@@ -11,5 +12,13 @@
   @media (max-width: 800px) {
     width: 480px;
   }
+}
+
+.tableFig1, .tableFig2, .tableFig3, .tableFig4 {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateY(-30px);
 }
 
