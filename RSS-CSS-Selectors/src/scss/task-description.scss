@@ -33,6 +33,14 @@
   margin: 10px 0 0 auto;
   flex-shrink: 1;
 
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.85);
+  }
+
   @media (max-width: 1023px) {
     margin: 10px 10px 0 0;
   }

@@ -35,6 +35,14 @@
   height: 40px;
   background-image: url("../img/close.svg");
   background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.85);
+  }
 }
 
 #adaptivePopup {
