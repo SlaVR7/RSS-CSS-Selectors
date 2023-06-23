@@ -11,18 +11,29 @@ export function changeLevelWrapper():void {
     const levelElements: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item');
     const nextLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.right-arrow');
     const previousLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.left-arrow');
+    const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
+    const inputBtn = document.querySelectorAll('.inputBtn');
 
     let currentLevel = 1;
 
-    function changeLevel(levelNum: number, event?: Event, isArrowClick?: boolean): void {
+    function changeLevel(levelNum: number, event?: Event, dontMovePopup?: boolean): void {
         if (currentLevel === 1 && (event?.target === previousLevel[0] || event?.target === previousLevel[1])) return;
         if (currentLevel === 10 && (event?.target === nextLevel[0] || event?.target === nextLevel[1])) return;
         createDescription(levelsObjects[levelNum]);
         createTitle(levelsObjects[levelNum]);
         createTags(levelsObjects[levelNum]);
         createTable(levelsObjects[levelNum]);
-        if (!isArrowClick) movePopup(window.innerWidth);
+        if (!dontMovePopup) movePopup(window.innerWidth);
         currentLevel = levelNum + 1;
+    }
+
+    function changeLevelByInput(): void {
+        if (inputArea !== null) {
+            const inputValue = inputArea.value;
+            if (typeof +inputValue === "number" && +inputValue >= 1 && +inputValue <= 10) {
+                changeLevel(+inputValue - 1, undefined, true);
+            }
+        }
     }
 
 
@@ -50,6 +61,8 @@ export function changeLevelWrapper():void {
                 changeLevel(currentLevel - 2, event, true)
             });
         })
+
+        inputBtn.forEach(item => item.addEventListener('click', changeLevelByInput));
 
         changeLevel(0)
     });
