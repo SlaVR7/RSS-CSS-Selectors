@@ -22,3 +22,57 @@
   transform: translateY(-30px);
 }
 
+.animationSettings {
+  animation-name: anim;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.winAnimation {
+  animation-name: winAnim;
+  animation-duration: 1s;
+}
+
+@keyframes winAnim {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(5000px);
+  }
+}
+
+.loseAnimation {
+  animation-name: loseAnim;
+  animation-duration: .5s;
+}
+
+@keyframes loseAnim {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+      transform: translateX(5px);
+    }
+}
+
+
+

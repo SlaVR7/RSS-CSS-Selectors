@@ -1,7 +1,7 @@
 import * as events from "events";
 let isListenerAdded = false;
 
-export function movePopup(width?: number):void {
+export function movePopup(width?: number, closePopup?: boolean):void {
 
     const cross: HTMLDivElement | null = document.querySelector('#closeBtn');
     const menu: HTMLDivElement | null= document.querySelector('#rightMenu');
@@ -12,24 +12,27 @@ export function movePopup(width?: number):void {
     const adaptiveMenu: HTMLDivElement | null = document.querySelector('#adaptiveMenu');
 
 
-    function togglePopup(): void {
+    function togglePopup(closePopup?: boolean): void {
         if (popup !== null) popup.classList.toggle('hidden');
 
         if (cross !== null && menu !== null && !isListenerAdded) {
-            cross.addEventListener('click', togglePopup);
-            menu.addEventListener('click', togglePopup);
+            cross.addEventListener('click', () => togglePopup());
+            menu.addEventListener('click', () => togglePopup());
         }
         isListenerAdded = true;
+        if (closePopup) popup?.classList.add('hidden');
     }
-    function toggleAdaptivePopup(): void {
+    function toggleAdaptivePopup(closePopup?: boolean): void {
         if (adaptivePopup !== null) adaptivePopup.classList.toggle('hidden-adaptive');
 
         if (closeAdaptive !== null && adaptiveMenu !== null && !isListenerAdded) {
-            closeAdaptive.addEventListener('click', toggleAdaptivePopup);
-            adaptiveMenu.addEventListener('click', toggleAdaptivePopup);
+            closeAdaptive.addEventListener('click', () => toggleAdaptivePopup());
+            adaptiveMenu.addEventListener('click', () => toggleAdaptivePopup());
         }
         isListenerAdded = true;
+
+        if (closePopup) adaptivePopup?.classList.add('hidden');
     }
 
-    if (width) width < 1024 ? toggleAdaptivePopup() : togglePopup();
+    if (width) width < 1024 ? toggleAdaptivePopup(closePopup) : togglePopup(closePopup);
 }
