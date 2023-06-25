@@ -1,14 +1,17 @@
 import { levelsObjects } from './level-objects';
-import { changeLevelWrapper } from './changeLevel';
-import { figuresDivs } from './createTable';
+import { changeLevel } from './changeLevel';
 
-function win(currentLevel: number) {
-    console.log('winn');
+function win() {
     const animatedElements: NodeListOf<HTMLDivElement> = document.querySelectorAll('.animationSettings');
     animatedElements.forEach(item => {
         item.classList.add('winAnimation');
     })
-    setTimeout(() => changeLevelWrapper(true, currentLevel + 1), 1000);
+    const level = localStorage.getItem('level');
+    if (level) localStorage.setItem('level', (+level + 1).toString())
+    setTimeout(() => {
+        const level = localStorage.getItem('level');
+        if (level) changeLevel(+level - 1, undefined, undefined, true);
+    }, 1000);
 }
 
 function lose() {
@@ -20,15 +23,15 @@ function lose() {
     }
 }
 
-export function compareResult(currentLevel: number, event?: KeyboardEvent, type?: string) {
-    console.log(`level im compare ${currentLevel}`);
+export function compareResult(event?: KeyboardEvent, type?: string) {
     if (event?.key !== 'Enter' && type !== 'mouse') return;
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
-    if (inputArea?.value === levelsObjects[currentLevel - 1].target) {
-        console.log('win');
-        win(currentLevel);
-    } else {
-        console.log('lose');
-        lose();
+    const level = localStorage.getItem('level');
+    if (level) {
+        if (inputArea?.value === levelsObjects[+level - 1].target) {
+            win();
+        } else {
+            lose();
+        }
     }
 }

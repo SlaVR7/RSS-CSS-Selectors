@@ -3,13 +3,12 @@
 }
 
 body {
-  background: #886b7c;
+  background: #7f85b3;
   margin: 0;
 }
 
 .wrapper {
-  max-height: 100vh;
-  margin-left: auto;
+  margin: 0 auto;
   padding-left: 10px;
   display: flex;
   justify-content: space-between;
@@ -22,6 +21,9 @@ body {
 
 h3 {
   text-align: center;
+  margin: 3px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .left {

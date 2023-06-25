@@ -1,4 +1,3 @@
-import * as events from "events";
 let isListenerAdded = false;
 
 export function movePopup(width?: number, closePopup?: boolean):void {
@@ -31,7 +30,7 @@ export function movePopup(width?: number, closePopup?: boolean):void {
         }
         isListenerAdded = true;
 
-        if (closePopup) adaptivePopup?.classList.add('hidden');
+        if (closePopup) adaptivePopup?.classList.add('hidden-adaptive');
     }
 
     if (width) width < 1024 ? toggleAdaptivePopup(closePopup) : togglePopup(closePopup);
