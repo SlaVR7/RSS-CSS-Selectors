@@ -53,6 +53,8 @@
   font-size: 20px;
 }
 
+li:not(.input-area) {}
+
 .inputBtn {
   font-size: 20px;
 

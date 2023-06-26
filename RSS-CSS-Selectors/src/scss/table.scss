@@ -43,6 +43,7 @@
 .winAnimation {
   animation-name: winAnim;
   animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 
 @keyframes winAnim {

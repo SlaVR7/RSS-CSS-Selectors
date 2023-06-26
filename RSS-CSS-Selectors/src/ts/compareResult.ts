@@ -1,20 +1,27 @@
 import { levelsObjects } from './level-objects';
 import { changeLevel } from './changeLevel';
+import { taskDescription } from './createDescription';
 
-function win() {
+function win():void {
     const animatedElements: NodeListOf<HTMLDivElement> = document.querySelectorAll('.animationSettings');
     animatedElements.forEach(item => {
         item.classList.add('winAnimation');
     })
-    const level = localStorage.getItem('level');
-    if (level) localStorage.setItem('level', (+level + 1).toString())
-    setTimeout(() => {
-        const level = localStorage.getItem('level');
-        if (level) changeLevel(+level - 1, undefined, undefined, true);
+    const level: string | null = localStorage.getItem('level');
+    if (level && +level === 10) {
+        taskDescription.forEach(item => {
+            item.innerText = 'Congratulations! You win!';
+            item.classList.add('winLastLevel');
+        });
+    }
+    if (level && +level !== 10) localStorage.setItem('level', (+level + 1).toString())
+    setTimeout(():void => {
+        const level: string | null = localStorage.getItem('level');
+        if (level && +level !== 10) changeLevel(+level - 1, undefined, undefined, true);
     }, 1000);
 }
 
-function lose() {
+function lose(): void {
     const table: HTMLDivElement | null = document.querySelector('.table');
     if (table) {
 
@@ -23,15 +30,20 @@ function lose() {
     }
 }
 
-export function compareResult(event?: KeyboardEvent, type?: string) {
+export function compareResult(event?: KeyboardEvent, type?: string):void {
     if (event?.key !== 'Enter' && type !== 'mouse') return;
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
-    const level = localStorage.getItem('level');
+    const level: string | null = localStorage.getItem('level');
     if (level) {
-        if (inputArea?.value === levelsObjects[+level - 1].target) {
-            win();
-        } else {
-            lose();
-        }
+        const targets:string[] = levelsObjects[+level - 1].target;
+        targets.forEach((item:string):void => {
+            if (inputArea?.value === item) {
+                win();
+                return;
+            } else {
+                lose();
+            }
+        })
+
     }
 }

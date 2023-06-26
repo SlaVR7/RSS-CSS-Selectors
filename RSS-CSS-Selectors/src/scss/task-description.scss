@@ -1,7 +1,7 @@
 .adaptive {
   position: relative;
   display: none;
-  background: #413138;
+  background: #919191;
 
   @media (max-width: 1023px) {
     display: flex;
@@ -13,8 +13,9 @@
 }
 
 .task-description {
-  @extend .yellow;
+  color: #5e0000;
   margin-left: 10px;
+  font-size: 26px;
 }
 
 .adaptive-title {
