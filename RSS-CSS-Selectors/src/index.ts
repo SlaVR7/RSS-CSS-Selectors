@@ -3,12 +3,14 @@ import { buttonListener } from './ts/buttonListener';
 import { compareResult } from './ts/compareResult';
 import { changeLevel, changeLevelByInput, nextLevel, previousLevel, inputArea } from './ts/changeLevel';
 import { movePopup } from './ts/pop-up';
+import { getHelp } from './ts/getHelp';
 
 const inputBtn: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.inputBtn');
+const helpButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.help-btn');
 
 if (!localStorage.getItem('level')) localStorage.setItem('level', '1')
 
-const level = localStorage.getItem('level');
+export const level = localStorage.getItem('level');
 if (level) changeLevel(+level - 1, undefined, true, false);
 movePopup(window.innerWidth, true);
 
@@ -35,5 +37,7 @@ inputArea?.addEventListener('keydown', (event) => {
         compareResult(event);
     }
 });
+
+helpButtons.forEach(item => item.addEventListener('click', getHelp));
 
 

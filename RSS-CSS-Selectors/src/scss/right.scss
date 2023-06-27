@@ -109,3 +109,20 @@ ul {
   animation-iteration-count: infinite;
   animation-direction: normal;
 }
+
+.help-btn {
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 22px;
+  color: blue;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.85);
+  }
+}
