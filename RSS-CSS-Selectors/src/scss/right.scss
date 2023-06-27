@@ -110,11 +110,16 @@ ul {
   animation-direction: normal;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 .help-btn {
   display: block;
   width: 100px;
   height: 40px;
-  margin: 0 auto;
   font-size: 22px;
   color: blue;
 
@@ -125,4 +130,21 @@ ul {
   &:active {
     transform: scale(0.85);
   }
+}
+
+.reset-btn {
+  @extend .help-btn;
+}
+
+.completedWithHelp {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #004900;
+  color: #004900;
+}
+
+.displayBlock {
+  display: block;
 }

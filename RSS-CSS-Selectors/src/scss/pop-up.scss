@@ -66,3 +66,21 @@
   margin: 0 auto;
   color: #f3f372;
 }
+
+.not-completed {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-image: url("../img/minus.svg");
+  background-size: contain;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-image: url("../img/checkmark.svg");
+  background-size: contain;
+}

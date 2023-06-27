@@ -4,6 +4,8 @@ import {createTags} from "./createTags";
 import {createTable} from "./createTable";
 import {levelsObjects} from "./level-objects";
 import { movePopup } from './pop-up';
+import { showCheckmark } from './gameProgress';
+import { checkForHelp, getHelp } from './getHelp';
 
 
 export const nextLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.right-arrow');
@@ -27,6 +29,8 @@ export function changeLevel(levelIndex: number, event?: Event, dontMovePopup?: b
     }
     if (inputArea) inputArea.value = '';
     localStorage.setItem('level', (levelIndex + 1).toString());
+    showCheckmark();
+    checkForHelp();
 }
 
 export function changeLevelByInput(event?: KeyboardEvent, type?: string): void {

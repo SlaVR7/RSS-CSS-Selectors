@@ -1,6 +1,9 @@
 import { levelsObjects } from './level-objects';
 import { changeLevel } from './changeLevel';
 import { taskDescription } from './createDescription';
+import { showCheckmark } from './gameProgress';
+
+export const completedLevels: number[] = [];
 
 function win():void {
     const animatedElements: NodeListOf<HTMLDivElement> = document.querySelectorAll('.animationSettings');
@@ -14,6 +17,9 @@ function win():void {
             item.classList.add('winLastLevel');
         });
     }
+    if (level) completedLevels.push(+level);
+    localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
+    showCheckmark();
     if (level && +level !== 10) localStorage.setItem('level', (+level + 1).toString())
     setTimeout(():void => {
         const level: string | null = localStorage.getItem('level');

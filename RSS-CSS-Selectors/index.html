@@ -12,6 +12,7 @@
           <div class="adaptive-title">
             <div class="title-and-arrows">
               <div class="left-arrow"></div>
+              <span class="not-completed" id='levelCheckmarkAdaptive'></span>
               <h2 class="level-num">Level 1</h2>
               <div class="right-arrow"></div>
             </div>
@@ -22,24 +23,28 @@
               <div class="menu-item"></div>
             </div>
           </div>
+          <p class='completedWithHelp'>Completed with help</p>
           <div class="task-description"></div>
-          <button class='help-btn'>Help</button>
+          <div class='btn-container'>
+            <button class='help-btn'>Help</button>
+            <button class='reset-btn'>Reset</button>
+          </div>
           <div class="adaptive hidden-adaptive" id="adaptivePopup">
               <div class="adaptive-popup-title">
                 <div class="level">Select level</div>
                 <div class="closeBtn" id="closeAdaptive"></div>
             </div>
             <ul class="level-list-adaptive">
-              <li class="level-item-adaptive">Level 1</li>
-              <li class="level-item-adaptive">Level 2</li>
-              <li class="level-item-adaptive">Level 3</li>
-              <li class="level-item-adaptive">Level 4</li>
-              <li class="level-item-adaptive">Level 5</li>
-              <li class="level-item-adaptive">Level 6</li>
-              <li class="level-item-adaptive">Level 7</li>
-              <li class="level-item-adaptive">Level 8</li>
-              <li class="level-item-adaptive">Level 9</li>
-              <li class="level-item-adaptive">Level 10</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 1</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 2</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 3</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 4</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 5</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 6</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 7</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 8</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 9</li>
+              <li class="level-item-adaptive"><span class="not-completed"></span>Level 10</li>
             </ul>
         </div>
         </div>
@@ -87,21 +92,22 @@
               <div class="closeBtn" id="closeBtn"></div>
             </div>
             <ul>
-              <li class="level-item">Level 1</li>
-              <li class="level-item">Level 2</li>
-              <li class="level-item">Level 3</li>
-              <li class="level-item">Level 4</li>
-              <li class="level-item">Level 5</li>
-              <li class="level-item">Level 6</li>
-              <li class="level-item">Level 7</li>
-              <li class="level-item">Level 8</li>
-              <li class="level-item">Level 9</li>
-              <li class="level-item">Level 10</li>
+              <li class="level-item"><span class="not-completed"></span>Level 1</li>
+              <li class="level-item"><span class="not-completed"></span>Level 2</li>
+              <li class="level-item"><span class="not-completed"></span>Level 3</li>
+              <li class="level-item"><span class="not-completed"></span>Level 4</li>
+              <li class="level-item"><span class="not-completed"></span>Level 5</li>
+              <li class="level-item"><span class="not-completed"></span>Level 6</li>
+              <li class="level-item"><span class="not-completed"></span>Level 7</li>
+              <li class="level-item"><span class="not-completed"></span>Level 8</li>
+              <li class="level-item"><span class="not-completed"></span>Level 9</li>
+              <li class="level-item"><span class="not-completed"></span>Level 10</li>
             </ul>
           </div>
         </div>
         <div class="right-wrapper">
           <div class="left-arrow"></div>
+          <span class="not-completed" id='levelCheckmark'></span>
           <h2 class="level-num"></h2>
           <div class="right-arrow"></div>
           <div class="menu" id="rightMenu">
@@ -111,8 +117,12 @@
             <div class="menu-item"></div>
           </div>
         </div>
+        <p class='completedWithHelp'>Completed with help</p>
         <div class="task-description"></div>
-        <button class='help-btn'>Help</button>
+        <div class='btn-container'>
+          <button class='help-btn'>Help</button>
+          <button class='reset-btn'>Reset</button>
+        </div>
       </div>
     </div>
     <footer>
