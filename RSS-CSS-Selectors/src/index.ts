@@ -17,31 +17,31 @@ if (level) changeLevel(+level - 1, undefined, true, false);
 movePopup(window.innerWidth, true);
 
 
-nextLevel.forEach(item => {
-    item.addEventListener('click', (event) => {
-        const level = localStorage.getItem('level');
+nextLevel.forEach((item: HTMLDivElement): void => {
+    item.addEventListener('click', (event: MouseEvent): void => {
+        const level: string | null = localStorage.getItem('level');
         if (event && level) changeLevel(+level, event, true, true)
     });
 });
 
-previousLevel.forEach(item => {
-    item.addEventListener('click', (event) => {
+previousLevel.forEach((item: HTMLDivElement): void => {
+    item.addEventListener('click', (event: MouseEvent): void => {
         const level = localStorage.getItem('level');
         if (level) changeLevel(+level - 2, event, true);
     });
 })
 
-inputBtn.forEach(item => item.addEventListener('click', buttonListener));
+inputBtn.forEach((item: HTMLButtonElement) => item.addEventListener('click', buttonListener));
 
-inputArea?.addEventListener('keydown', (event) => {
+inputArea?.addEventListener('keydown', (event: KeyboardEvent): void => {
     if (event.key === 'Enter') {
         changeLevelByInput(event, undefined);
         compareResult(event);
     }
 });
 
-helpButtons.forEach(item => item.addEventListener('click', getHelp));
-resetButtons.forEach(item => item.addEventListener('click', () => {
+helpButtons.forEach((item: HTMLButtonElement) => item.addEventListener('click', getHelp));
+resetButtons.forEach((item: HTMLButtonElement) => item.addEventListener('click', (): void => {
     changeLevel(0, undefined, undefined, true);
     resetProgress();
 }))

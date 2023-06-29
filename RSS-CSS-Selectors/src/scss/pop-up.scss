@@ -84,3 +84,17 @@
   background-image: url("../img/checkmark.svg");
   background-size: contain;
 }
+
+.checkmarkHelp {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-image: url("../img/checkmarkBlue.svg");
+  background-size: contain;
+}
+
+.currentLevel {
+  color: red;
+  text-decoration: underline;
+}

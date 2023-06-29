@@ -1,18 +1,16 @@
-import { levelsObjects } from './level-objects';
 import { changeLevel } from './changeLevel';
 import { taskDescription } from './createDescription';
 import { showCheckmark } from './gameProgress';
 
-export const completedLevels: number[] = [];
-
 function win():void {
+    const completedLevels: number[] = JSON.parse(localStorage.getItem('completedLevels') || '[]');
     const animatedElements: NodeListOf<HTMLDivElement> = document.querySelectorAll('.animationSettings');
-    animatedElements.forEach(item => {
+    animatedElements.forEach((item: HTMLDivElement): void => {
         item.classList.add('winAnimation');
     })
     const level: string | null = localStorage.getItem('level');
     if (level && +level === 10) {
-        taskDescription.forEach(item => {
+        taskDescription.forEach((item: HTMLDivElement): void => {
             item.innerText = 'Congratulations! You win!';
             item.classList.add('winLastLevel');
         });
@@ -23,7 +21,7 @@ function win():void {
     if (level && +level !== 10) localStorage.setItem('level', (+level + 1).toString())
     setTimeout(():void => {
         const level: string | null = localStorage.getItem('level');
-        if (level && +level !== 10) changeLevel(+level - 1, undefined, undefined, true);
+        if (level) changeLevel(+level - 1, undefined, undefined, true);
     }, 1000);
 }
 
@@ -39,17 +37,12 @@ function lose(): void {
 export function compareResult(event?: KeyboardEvent, type?: string):void {
     if (event?.key !== 'Enter' && type !== 'mouse') return;
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
-    const level: string | null = localStorage.getItem('level');
-    if (level) {
-        const targets:string[] = levelsObjects[+level - 1].target;
-        targets.forEach((item:string):void => {
-            if (inputArea?.value === item) {
+    const targetElement: HTMLElement | null = document.querySelector('.target');
+            if (inputArea && targetElement?.matches(inputArea.value)) {
                 win();
                 return;
             } else {
                 lose();
             }
-        })
 
-    }
 }

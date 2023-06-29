@@ -9,7 +9,7 @@
     export function createTable(level: Levels): void {
         const table = level.table;
         for (let i = 0; i < 4; i++) {
-            const figureDiv = figuresDivs[i];
+            const figureDiv: HTMLDivElement | null = figuresDivs[i];
             if (figureDiv instanceof HTMLDivElement) {
                 figureDiv.style.backgroundImage = '';
                 figureDiv.classList.remove('animationSettings');
@@ -18,7 +18,7 @@
         }
 
         for (let i = 0; i < table.length; i++) {
-            const figureDiv = figuresDivs[i];
+            const figureDiv: HTMLDivElement | null = figuresDivs[i];
             if (figureDiv instanceof HTMLDivElement) {
                 figureDiv.style.backgroundImage = `url('${table[i]?.url}')`;
                 for (let j = 0; j < level.animatedElements.length; j++) {

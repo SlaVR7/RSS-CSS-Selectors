@@ -5,14 +5,16 @@ import {createTable} from "./createTable";
 import {levelsObjects} from "./level-objects";
 import { movePopup } from './pop-up';
 import { showCheckmark } from './gameProgress';
-import { checkForHelp, getHelp } from './getHelp';
+import { checkForHelp } from './getHelp';
+import { highlightCurrentLevel } from './highlightCurrentLevel';
+import { createFakeLayout } from './fakeLayout';
 
 
 export const nextLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.right-arrow');
 export const previousLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.left-arrow');
 export const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
-const levelElementsAdaptive: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item-adaptive');
-const levelElements: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item');
+export const levelElementsAdaptive: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item-adaptive');
+export const levelElements: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item');
 
 
 export function changeLevel(levelIndex: number, event?: Event, dontMovePopup?: boolean, closePopup?: boolean): void {
@@ -31,6 +33,8 @@ export function changeLevel(levelIndex: number, event?: Event, dontMovePopup?: b
     localStorage.setItem('level', (levelIndex + 1).toString());
     showCheckmark();
     checkForHelp();
+    highlightCurrentLevel();
+    createFakeLayout();
 }
 
 export function changeLevelByInput(event?: KeyboardEvent, type?: string): void {
@@ -43,11 +47,11 @@ export function changeLevelByInput(event?: KeyboardEvent, type?: string): void {
     }
 }
 
-levelElementsAdaptive.forEach((item, index) => {
+levelElementsAdaptive.forEach((item: HTMLLIElement, index: number): void => {
     item.addEventListener('click', () => changeLevel(index));
 })
 
-levelElements.forEach((item, index) => {
+levelElements.forEach((item: HTMLLIElement, index: number): void => {
     item.addEventListener('click', () => changeLevel(index));
 })
 
