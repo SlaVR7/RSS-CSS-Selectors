@@ -34,7 +34,8 @@ export function changeLevel(levelIndex: number, event?: Event, dontMovePopup?: b
     showCheckmark();
     checkForHelp();
     highlightCurrentLevel();
-    createFakeLayout();
+    const container: HTMLDivElement | null = document.querySelector('#fakeLayout');
+    createFakeLayout(container);
 }
 
 export function changeLevelByInput(event?: KeyboardEvent, type?: string): void {
