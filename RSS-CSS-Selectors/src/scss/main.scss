@@ -3,13 +3,17 @@
 }
 
 body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #7f85b3;
   margin: 0;
   overflow: hidden;
 }
 
 .wrapper {
-  margin: 0 auto;
+  flex-grow: 1;
   padding-left: 10px;
   display: flex;
   justify-content: space-between;

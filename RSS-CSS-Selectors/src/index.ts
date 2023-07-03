@@ -5,6 +5,7 @@ import { changeLevel, changeLevelByInput, nextLevel, previousLevel, inputArea } 
 import { movePopup } from './ts/pop-up';
 import { getHelp } from './ts/getHelp';
 import { resetProgress, showCheckmark } from './ts/gameProgress';
+import { highlightElements } from './ts/highlightElements';
 
 const inputBtn: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.inputBtn');
 const helpButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.help-btn');
@@ -47,6 +48,7 @@ resetButtons.forEach((item: HTMLButtonElement) => item.addEventListener('click',
 }))
 
 showCheckmark()
+highlightElements();
 
 
 

@@ -21,7 +21,7 @@ function win():void {
     if (level && +level !== 10) localStorage.setItem('level', (+level + 1).toString())
     setTimeout(():void => {
         const level: string | null = localStorage.getItem('level');
-        if (level) changeLevel(+level - 1, undefined, undefined, true);
+        if (level && +level !== 10) changeLevel(+level - 1, undefined, undefined, true);
     }, 1000);
 }
 
@@ -38,11 +38,14 @@ export function compareResult(event?: KeyboardEvent, type?: string):void {
     if (event?.key !== 'Enter' && type !== 'mouse') return;
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
     const targetElement: HTMLElement | null = document.querySelector('.target');
-            if (inputArea && targetElement?.matches(inputArea.value)) {
-                win();
-                return;
-            } else {
-                lose();
-            }
+    if (inputArea?.value.includes('\'') || inputArea?.value === '') {
+        lose();
+        return;
+    }
+    if (inputArea && targetElement?.matches(inputArea.value)) {
+        win();
+    } else {
+        lose();
+    }
 
 }

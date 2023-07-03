@@ -8,6 +8,7 @@ import { showCheckmark } from './gameProgress';
 import { checkForHelp } from './getHelp';
 import { highlightCurrentLevel } from './highlightCurrentLevel';
 import { createFakeLayout } from './fakeLayout';
+import { highlightElements } from './highlightElements';
 
 
 export const nextLevel: NodeListOf<HTMLDivElement> = document.querySelectorAll('.right-arrow');

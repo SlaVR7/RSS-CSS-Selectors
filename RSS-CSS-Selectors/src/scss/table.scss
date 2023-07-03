@@ -20,6 +20,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   transform: translateY(-30px);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .animationSettings {
@@ -73,6 +77,29 @@
   75% {
       transform: translateX(5px);
     }
+}
+
+.tooltip {
+  font-size: 12px;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  background-color: #e7e4e4;
+  color: #860000;
+  padding: 3px 5px;
+  font-weight: bold;
+  transform: translate(-30px, -45px);
+  border-radius: 50px;
+  border: 1px solid black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 38px;
+    border: 10px solid transparent;
+    border-top: 10px solid #e7e4e4;
+  }
 }
 
 
