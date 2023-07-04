@@ -39,7 +39,7 @@ const level1: Levels<Figures> = {
         string5: '',
         string6: '',
     },
-    fakeLayout: '<div class="cube"></div><div class="pyramid target"></div><div class="cube"></div>',
+    fakeLayout: '<div class="cube notTarget"></div><div class="pyramid target"></div><div class="cube notTarget"></div>',
     target: ['.pyramid'],
 }
 
@@ -56,8 +56,8 @@ const level2: Levels<Figures> = {
         string5: `\u00A0\u00A0<div class='cube'></div>`,
         string6: `</div>`,
     },
-   fakeLayout: `<div>
-  <div class="pyramid"></div>
+   fakeLayout: `<div class='notTarget'>
+  <div class="pyramid notTarget"></div>
   <div class="cube target"></div>
   <div class="cube target"></div>
   <div class="cube target"></div>
@@ -79,11 +79,11 @@ const level3: Levels<Figures> = {
         string5: `\u00A0\u00A0<div class="pyramid" id="four"></div>`,
         string6: `</div>`,
     },
-    fakeLayout: `<div>
-  <div class="pyramid" id="first"></div>
-  <div class="pyramid" id="second"></div>
+    fakeLayout: `<div class="notTarget">
+  <div class="pyramid notTarget" id="first"></div>
+  <div class="pyramid notTarget" id="second"></div>
   <div class="pyramid target" id="third"></div>
-  <div class="pyramid" id="four"></div>
+  <div class="pyramid notTarget" id="four"></div>
   </div>
 `,
     target: ['#third'],
@@ -102,7 +102,7 @@ const level4: Levels<Figures> = {
         string5: `</ul>`,
         string6: '',
     },
-    fakeLayout: `<ul>
+    fakeLayout: `<ul class="notTarget">
   <li class="target"></li>
   <li class="target"></li>
   <li class="target"></li>
@@ -124,9 +124,9 @@ const level5: Levels<Figures> = {
         string5: `\u00A0\u00A0<li></li>`,
         string6: `</ul>`,
     },
-    fakeLayout: `<ul>
-  <li></li>
-  <li></li>
+    fakeLayout: `<ul class="notTarget">
+  <li class="notTarget"></li>
+  <li class="notTarget"></li>
   <li class="target"></li>
   </ul>
 `,
@@ -146,10 +146,10 @@ const level6: Levels<Figures> = {
         string5: `\u00A0\u00A0<li></li>`,
         string6: `</ul>`,
     },
-    fakeLayout: `<ul>
-    \u00A0\u00A0<li></li>
+    fakeLayout: `<ul class="notTarget">
+    \u00A0\u00A0<li class="notTarget"></li>
     \u00A0\u00A0<li class="target"></li>
-    \u00A0\u00A0<li></li>
+    \u00A0\u00A0<li class="notTarget"></li>
     \u00A0\u00A0<li class="target"></li>
     </ul>
 `,
@@ -169,11 +169,11 @@ const level7: Levels<Figures> = {
         string5: `\u00A0\u00A0<li></li>`,
         string6: `</ul>`,
     },
-    fakeLayout: `<ul>
+    fakeLayout: `<ul class="notTarget">
     \u00A0\u00A0<li class="target"></li>
-    \u00A0\u00A0<li></li>
+    \u00A0\u00A0<li class="notTarget"></li>
     \u00A0\u00A0<li class="target"></li>
-    \u00A0\u00A0<li></li>
+    \u00A0\u00A0<li class="notTarget"></li>
     </ul>
 `,
     target: ['li:nth-child(odd)'],
@@ -192,10 +192,10 @@ const level8: Levels<Figures> = {
         string5: `\u00A0\u00A0<li class="green-cube"></li>`,
         string6: `</ol>`,
     },
-    fakeLayout: `<ol>
+    fakeLayout: `<ol class="notTarget">
   <li class="red-cube target"></li>
   <li class="black-pyramid target"></li>
-  <li class="blue-pyramid"></li>
+  <li class="blue-pyramid notTarget"></li>
   <li class="green-cube target"></li>
   </ol>
 `,
@@ -215,10 +215,10 @@ const level9: Levels<Figures> = {
         string5: `\u00A0\u00A0<div id="black-pyramid"></div>`,
         string6: `</section>`,
     },
-    fakeLayout: `<section>
+    fakeLayout: `<section class="notTarget">
   <div class="target" id="blue-pyramid"></div>
-  <div id="red-cube"></div>
-  <div id="green-cube"></div>
+  <div class="notTarget" id="red-cube"></div>
+  <div class="notTarget" id="green-cube"></div>
   <div class="target" id="black-pyramid target"></div>
   </section>
 `,

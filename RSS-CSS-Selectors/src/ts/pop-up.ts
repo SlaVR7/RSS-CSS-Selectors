@@ -29,7 +29,6 @@ export function movePopup(width?: number, closePopup?: boolean):void {
         if (closeAdaptive !== null && adaptiveMenu !== null && !isListenerAdaptiveAdded) {
             closeAdaptive.addEventListener('click', () => toggleAdaptivePopup());
             adaptiveMenu.addEventListener('click', () => toggleAdaptivePopup());
-            console.log('sef');
         }
         isListenerAdaptiveAdded = true;
 

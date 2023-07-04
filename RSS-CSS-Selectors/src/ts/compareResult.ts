@@ -38,12 +38,32 @@ function lose(): void {
 export function compareResult(event?: KeyboardEvent, type?: string):void {
     if (event?.key !== 'Enter' && type !== 'mouse') return;
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
-    const targetElement: HTMLElement | null = document.querySelector('.target');
+    const targetElements: NodeListOf<HTMLElement> = document.querySelectorAll('.target');
+    const notTargetElements: NodeListOf<HTMLElement> = document.querySelectorAll('.notTarget');
     if (inputArea?.value.includes('\'') || inputArea?.value === '') {
         lose();
         return;
     }
-    if (inputArea && targetElement?.matches(inputArea.value)) {
+
+    let isTargetsElMatches;
+    let isNotTargetsElMatches;
+    targetElements.forEach(item => {
+        if (inputArea && item.matches(inputArea.value)) {
+            isTargetsElMatches = true;
+        } else {
+            isTargetsElMatches = false;
+            return;
+        }
+    })
+    notTargetElements.forEach(item => {
+        if (inputArea && item.matches(inputArea.value)) {
+            isNotTargetsElMatches = true;
+        } else {
+            isNotTargetsElMatches = false;
+            return;
+        }
+    })
+    if (inputArea && isTargetsElMatches && !isNotTargetsElMatches) {
         win();
     } else {
         lose();
