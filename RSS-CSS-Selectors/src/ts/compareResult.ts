@@ -40,7 +40,7 @@ export function compareResult(event?: KeyboardEvent, type?: string):void {
     const inputArea: HTMLInputElement | null = document.querySelector('#css-input');
     const targetElements: NodeListOf<HTMLElement> = document.querySelectorAll('.target');
     const notTargetElements: NodeListOf<HTMLElement> = document.querySelectorAll('.notTarget');
-    if (inputArea?.value.includes('\'') || inputArea?.value === '') {
+    if (inputArea?.value.includes('\'') || inputArea?.value === '' || inputArea?.value.includes(' :') || inputArea?.value.includes(': ')) {
         lose();
         return;
     }
