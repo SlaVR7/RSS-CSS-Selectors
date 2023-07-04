@@ -108,7 +108,7 @@ const level4: Levels<Figures> = {
   <li class="target"></li>
   </ul>
 `,
-    target: ['ld'],
+    target: ['li'],
 }
 
 const level5: Levels<Figures> = {
@@ -219,7 +219,7 @@ const level9: Levels<Figures> = {
   <div class="target" id="blue-pyramid"></div>
   <div class="notTarget" id="red-cube"></div>
   <div class="notTarget" id="green-cube"></div>
-  <div class="target" id="black-pyramid target"></div>
+  <div class="target" id="black-pyramid"></div>
   </section>
 `,
     target: ['#blue-pyramid, #black-pyramid'],
