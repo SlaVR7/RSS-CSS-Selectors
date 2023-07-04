@@ -18,10 +18,11 @@ function win():void {
     if (level) completedLevels.push(+level);
     localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
     showCheckmark();
+    if (level && level === '10') return;
     if (level && +level !== 10) localStorage.setItem('level', (+level + 1).toString())
     setTimeout(():void => {
         const level: string | null = localStorage.getItem('level');
-        if (level && +level !== 10) changeLevel(+level - 1, undefined, undefined, true);
+        if (level) changeLevel(+level - 1, undefined, undefined, true);
     }, 1000);
 }
 

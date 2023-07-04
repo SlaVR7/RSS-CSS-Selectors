@@ -47,6 +47,12 @@ resetButtons.forEach((item: HTMLButtonElement) => item.addEventListener('click',
     resetProgress();
 }))
 
+window.addEventListener('resize', () => {
+    const levelIndex: string | null = localStorage.getItem('level');
+    if (levelIndex) changeLevel(+levelIndex - 1, undefined, undefined, true);
+    movePopup(innerWidth, true);
+})
+
 showCheckmark()
 highlightElements();
 

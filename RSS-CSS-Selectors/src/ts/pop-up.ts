@@ -1,4 +1,5 @@
 let isListenerAdded = false;
+let isListenerAdaptiveAdded = false;
 
 export function movePopup(width?: number, closePopup?: boolean):void {
 
@@ -14,6 +15,7 @@ export function movePopup(width?: number, closePopup?: boolean):void {
     function togglePopup(closePopup?: boolean): void {
         if (popup !== null) popup.classList.toggle('hidden');
 
+
         if (cross !== null && menu !== null && !isListenerAdded) {
             cross.addEventListener('click', () => togglePopup());
             menu.addEventListener('click', () => togglePopup());
@@ -24,11 +26,12 @@ export function movePopup(width?: number, closePopup?: boolean):void {
     function toggleAdaptivePopup(closePopup?: boolean): void {
         if (adaptivePopup !== null) adaptivePopup.classList.toggle('hidden-adaptive');
 
-        if (closeAdaptive !== null && adaptiveMenu !== null && !isListenerAdded) {
+        if (closeAdaptive !== null && adaptiveMenu !== null && !isListenerAdaptiveAdded) {
             closeAdaptive.addEventListener('click', () => toggleAdaptivePopup());
             adaptiveMenu.addEventListener('click', () => toggleAdaptivePopup());
+            console.log('sef');
         }
-        isListenerAdded = true;
+        isListenerAdaptiveAdded = true;
 
         if (closePopup) adaptivePopup?.classList.add('hidden-adaptive');
     }
