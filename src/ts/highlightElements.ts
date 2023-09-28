@@ -1,26 +1,24 @@
-import { level } from '../index';
-
 export function highlightElements(): void {
-    const elem1: HTMLDivElement | null = document.querySelector('.tableFig1');
-    const elem2: HTMLDivElement | null = document.querySelector('.tableFig2');
-    const elem3: HTMLDivElement | null = document.querySelector('.tableFig3');
-    const elem4: HTMLDivElement | null = document.querySelector('.tableFig4');
+    const figure1: HTMLDivElement | null = document.querySelector('.tableFig1');
+    const figure2: HTMLDivElement | null = document.querySelector('.tableFig2');
+    const figure3: HTMLDivElement | null = document.querySelector('.tableFig3');
+    const figure4: HTMLDivElement | null = document.querySelector('.tableFig4');
 
-    const str1: HTMLDivElement | null = document.querySelector('#str2');
-    const str2: HTMLDivElement | null = document.querySelector('#str3');
-    const str3: HTMLDivElement | null = document.querySelector('#str4');
-    const str4: HTMLDivElement | null = document.querySelector('#str5');
+    const string1: HTMLDivElement | null = document.querySelector('#string2');
+    const string2: HTMLDivElement | null = document.querySelector('#string3');
+    const string3: HTMLDivElement | null = document.querySelector('#string4');
+    const string4: HTMLDivElement | null = document.querySelector('#string5');
 
-    if (elem1 && elem2 && elem3 && elem4 && str1 && str2 && str3 && str4) {
-        const elements: HTMLDivElement[] = [elem1, elem2, elem3, elem4];
-        const tags: HTMLDivElement[] = [str1, str2, str3, str4];
+    if (figure1 && figure2 && figure3 && figure4 && string1 && string2 && string3 && string4) {
+        const elements: HTMLDivElement[] = [figure1, figure2, figure3, figure4];
+        const tags: HTMLDivElement[] = [string1, string2, string3, string4];
 
         elements.forEach((item, index) => {
             item.addEventListener('mouseenter', () => {
                 elements[index].classList.add('scale');
                 if (elements[index].classList.contains('animationSettings')) {
                     elements[index].classList.remove('animationSettings');
-                    elements[index].classList.add('animat');
+                    elements[index].classList.add('animation');
                 }
 
                 if (item.style.backgroundImage !== '') tags[index].classList.add('red');
@@ -33,8 +31,8 @@ export function highlightElements(): void {
         elements.forEach((item, index) => {
             item.addEventListener('mouseleave', () => {
                 elements[index].classList.remove('scale');
-                if (elements[index].classList.contains('animat')) {
-                    elements[index].classList.remove('animat');
+                if (elements[index].classList.contains('animation')) {
+                    elements[index].classList.remove('animation');
                     elements[index].classList.add('animationSettings');
                 }
 
@@ -51,7 +49,7 @@ export function highlightElements(): void {
                 elements[index].classList.add('scale');
                 if (elements[index].classList.contains('animationSettings')) {
                     elements[index].classList.remove('animationSettings');
-                    elements[index].classList.add('animat');
+                    elements[index].classList.add('animation');
                 }
 
                 const tooltip = document.createElement('div');
@@ -63,8 +61,8 @@ export function highlightElements(): void {
         tags.forEach((item, index) => {
             item.addEventListener('mouseleave', () => {
                 elements[index].classList.remove('scale');
-                if (elements[index].classList.contains('animat')) {
-                    elements[index].classList.remove('animat');
+                if (elements[index].classList.contains('animation')) {
+                    elements[index].classList.remove('animation');
                     elements[index].classList.add('animationSettings');
                 }
                 const tooltip: HTMLElement | null = document.querySelector('.tooltip');

@@ -2,19 +2,19 @@ import {Levels} from "./level-objects";
 import { Figures } from './figures';
 
 export function createTags(level:Levels<Figures>):void {
-    const str1: HTMLDivElement | null = document.querySelector('#str1');
-    const str2: HTMLDivElement | null = document.querySelector('#str2');
-    const str3: HTMLDivElement | null = document.querySelector('#str3');
-    const str4: HTMLDivElement | null = document.querySelector('#str4');
-    const str5: HTMLDivElement | null = document.querySelector('#str5');
-    const str6: HTMLDivElement | null = document.querySelector('#str6');
-    if (str1) str1.innerText = level.html.string1;
-    if (str2) str2.innerText = level.html.string2;
-    if (str3) str3.innerText = level.html.string3;
-    if (str4) str4.innerText = level.html.string4;
-    if (str5) str5.innerText = level.html.string5;
-    if (str6) str6.innerText = level.html.string6;
+    const string1: HTMLDivElement | null = document.querySelector('#string1');
+    const string2: HTMLDivElement | null = document.querySelector('#string2');
+    const string3: HTMLDivElement | null = document.querySelector('#string3');
+    const string4: HTMLDivElement | null = document.querySelector('#string4');
+    const string5: HTMLDivElement | null = document.querySelector('#string5');
+    const string6: HTMLDivElement | null = document.querySelector('#string6');
+    if (string1) string1.innerText = level.html.string1;
+    if (string2) string2.innerText = level.html.string2;
+    if (string3) string3.innerText = level.html.string3;
+    if (string4) string4.innerText = level.html.string4;
+    if (string5) string5.innerText = level.html.string5;
+    if (string6) string6.innerText = level.html.string6;
     if (level.title === 'Level 4') {
-        str5?.classList.remove('html-strings');
-    } else str5?.classList.add('html-strings');
+        string5?.classList.remove('html-strings');
+    } else string5?.classList.add('html-strings');
 }
